@@ -1,0 +1,52 @@
+{
+  "captureDate": "2026-10-10",
+  "captureMethod": "Selected text excerpts from official PDFs retrieved and parsed by the browser tool. Original PDF/XLSX bytes could not be downloaded into the workspace because local DNS resolution failed. These are excerpts, not full source files.",
+  "formula": "(currentEnplanements - previousEnplanements) / previousEnplanements * 100",
+  "results": [
+    {
+      "airport": "LAX",
+      "previousYear": 2024,
+      "previousEnplanements": 37760834,
+      "currentYear": 2025,
+      "currentEnplanements": 36497303,
+      "change": -1263531,
+      "growthPercent": -3.34614166625663,
+      "faaPublishedGrowthPercent": -3.35,
+      "overlappingYearMatches": true,
+      "sourceUrls": [
+        "https://www.faa.gov/sites/faa.gov/files/2026-09/arp-cy2024-commercial-service-enplanements.pdf",
+        "https://www.faa.gov/airports/planning_capacity/passenger_allcargo_stats/passenger/arp-cy2025-commercial-service-enplanements.pdf"
+      ]
+    },
+    {
+      "airport": "SFO",
+      "previousYear": 2024,
+      "previousEnplanements": 25078968,
+      "currentYear": 2025,
+      "currentEnplanements": 26251850,
+      "change": 1172882,
+      "growthPercent": 4.676755439059534,
+      "faaPublishedGrowthPercent": 4.68,
+      "overlappingYearMatches": true,
+      "sourceUrls": [
+        "https://www.faa.gov/sites/faa.gov/files/2026-09/arp-cy2024-commercial-service-enplanements.pdf",
+        "https://www.faa.gov/airports/planning_capacity/passenger_allcargo_stats/passenger/arp-cy2025-commercial-service-enplanements.pdf"
+      ]
+    },
+    {
+      "airport": "BOS",
+      "previousYear": 2024,
+      "previousEnplanements": 21090721,
+      "currentYear": 2025,
+      "currentEnplanements": 21021153,
+      "change": -69568,
+      "growthPercent": -0.32985121750934926,
+      "faaPublishedGrowthPercent": -0.33,
+      "overlappingYearMatches": true,
+      "sourceUrls": [
+        "https://www.faa.gov/sites/faa.gov/files/2026-09/arp-cy2024-commercial-service-enplanements.pdf",
+        "https://www.faa.gov/airports/planning_capacity/passenger_allcargo_stats/passenger/arp-cy2025-commercial-service-enplanements.pdf"
+      ]
+    }
+  ]
+}

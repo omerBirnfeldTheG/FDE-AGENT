@@ -1,0 +1,24 @@
+{
+  "captureDate": "2026-10-10",
+  "captureMethod": "Selected text excerpts from official PDFs retrieved and parsed by the browser tool. Original PDF/XLSX bytes could not be downloaded into the workspace because local DNS resolution failed. These are excerpts, not full source files.",
+  "sources": [
+    {
+      "year": 2024,
+      "url": "https://www.faa.gov/sites/faa.gov/files/2026-09/arp-cy2024-commercial-service-enplanements.pdf",
+      "publicationDate": "2025-09-15",
+      "title": "Cy2024 Enplanements at All Commercial Service Airports (by Rank)",
+      "pages": [1],
+      "columnOrder": "CY24 Enplanements, CY23 Enplanements, % Change",
+      "text": "5 WP CA LAX Los Angeles Los Angeles International P L 37,760,834 40,956,673 -7.80%\n13 WP CA SFO San Francisco International Airport San Francisco International P L 25,078,968 24,191,159 3.67%\n16 NE MA BOS Boston General Edward Lawrence Logan International P L 21,090,721 19,962,678 5.65%"
+    },
+    {
+      "year": 2025,
+      "url": "https://www.faa.gov/airports/planning_capacity/passenger_allcargo_stats/passenger/arp-cy2025-commercial-service-enplanements.pdf",
+      "publicationDate": "2026-09-24",
+      "title": "Final CY2025 Enplanements at All Airports by State and Airport",
+      "pages": [11, 25],
+      "columnOrder": "CY25 Enplanements, CY24 Enplanements, % Change",
+      "text": "5 W P CA LAX Los Angeles Los Angeles International P L 36,497,303 37,760,834 -3.35%\n10 W P CA SFO San Francisco International Airport San Francisco International P L 26,251,850 25,078,968 4.68%\n16 NE MA BOS Boston General Edward Lawrence Logan International P L 21,021,153 21,090,721 -0.33%"
+    }
+  ]
+}

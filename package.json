@@ -1,0 +1,41 @@
+{
+  "name": "airport-investment-agent",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env backend/server.ts",
+    "dev": "node --env-file-if-exists=.env --watch backend/server.ts",
+    "test": "node --test backend/tests/*.test.ts frontend/tests/*.test.ts",
+    "typecheck": "tsc --noEmit",
+    "validate:data": "node validation/validate-enplanements.ts",
+    "setup:gemini": "npm install @google/genai",
+    "setup:frontend": "npm install react react-dom && npm install -D vite @types/react @types/react-dom",
+    "dev:frontend": "vite --config frontend/vite.config.ts",
+    "build:frontend": "tsc --noEmit -p frontend/tsconfig.json && vite build --config frontend/vite.config.ts",
+    "preview:frontend": "vite preview --config frontend/vite.config.ts",
+    "typecheck:frontend": "tsc --noEmit -p frontend/tsconfig.json",
+    "setup:data": "npm install pdfjs-dist",
+    "refresh:data": "node validation/refresh-faa-data.ts",
+    "check:readability": "node scripts/check-readability.mjs"
+  },
+  "dependencies": {
+    "@google/genai": "^2.28.0",
+    "express": "4.21.2",
+    "openai": "6.0.0",
+    "pdfjs-dist": "^6.4.299",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@types/express": "4.17.21",
+    "@types/node": "24.1.0",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "typescript": "5.8.3",
+    "vite": "^8.3.4"
+  }
+}

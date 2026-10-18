@@ -1,0 +1,52 @@
+{
+  "iata": "LAX",
+  "metric": "passenger_enplanements",
+  "periodBasis": "calendar-year",
+  "observations": [
+    {
+      "year": 2024,
+      "enplanements": 37760834,
+      "evidenceType": "reported"
+    },
+    {
+      "year": 2025,
+      "enplanements": 36497303,
+      "evidenceType": "reported"
+    }
+  ],
+  "yearOverYear": {
+    "fromYear": 2024,
+    "toYear": 2025,
+    "change": -1263531,
+    "growthPercent": -3.34614166625663,
+    "evidenceType": "calculated",
+    "formula": "(current - previous) / previous * 100",
+    "unavailableReason": null
+  },
+  "sources": [
+    {
+      "reportingYear": 2024,
+      "publicationDate": "2025-09-15",
+      "title": "Cy2024 Enplanements at All Commercial Service Airports (by Rank)",
+      "url": "https://www.faa.gov/sites/faa.gov/files/2026-09/arp-cy2024-commercial-service-enplanements.pdf"
+    },
+    {
+      "reportingYear": 2025,
+      "publicationDate": "2026-09-24",
+      "title": "Final CY2025 Enplanements at All Airports by State and Airport",
+      "url": "https://www.faa.gov/airports/planning_capacity/passenger_allcargo_stats/passenger/arp-cy2025-commercial-service-enplanements.pdf"
+    }
+  ],
+  "dataSnapshot": {
+    "mode": "documented-local-snapshot",
+    "capturedOn": "2026-10-10",
+    "sourceReferencesVerifiedOn": "2026-10-10",
+    "limitations": [
+      "Original PDF/XLSX files were not downloaded locally: FAA host DNS resolution failed. Counts come from documented browser-parsed PDF excerpts.",
+      "Coverage is limited to LAX, SFO and BOS; responses are not live FAA queries.",
+      "Enplanements are calendar-year passenger boardings, not total airport passengers or unique travelers.",
+      "The 2025 commercial-service PDF link contains an all-airports-by-state report.",
+      "Annual traffic does not measure terminal capacity or explain changes in demand."
+    ]
+  }
+}

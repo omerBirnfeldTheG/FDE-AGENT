@@ -1,0 +1,210 @@
+{
+  "exampleType": "mocked-model-response-with-real-snapshot-evidence",
+  "reply": "The validated dataset currently covers only LAX, SFO, and BOS.\n\nSFO: rank 1, Demand Growth Score 73.38/100; 2024–2025 growth 4.68%.\n\nLAX: rank 3, Demand Growth Score 33.27/100; 2024–2025 growth -3.35%.\n\nSFO growth minus LAX growth is 8.02 percentage points.\n\nSFO ranks first under the passenger-growth-only score. Scores are sorted descending, with IATA code breaking ties. This ranking applies only to the validated dataset.\n\nMethodology: score = clamp(5 × (growthPercent + 10), 0, 100). The −10% and +10% anchors are heuristic assumptions; zero growth scores 50.\n\nCounts are calendar-year passenger boardings, not total arriving and departing passengers. Data comes from documented local PDF extracts; original FAA files were not downloaded locally.\n\nPassenger growth alone does not establish terminal expansion need or financial profitability. Capacity, congestion, project costs, and financial returns are unavailable.\n\nFAA source, reporting year 2024: https://www.faa.gov/sites/faa.gov/files/2026-09/arp-cy2024-commercial-service-enplanements.pdf\n\nFAA source, reporting year 2025: https://www.faa.gov/airports/planning_capacity/passenger_allcargo_stats/passenger/arp-cy2025-commercial-service-enplanements.pdf",
+  "evidence": [
+    {
+      "kind": "rankings",
+      "data": {
+        "metric": "Demand Growth Score",
+        "scoreRange": {
+          "min": 0,
+          "max": 100
+        },
+        "periodBasis": "calendar-year",
+        "methodology": {
+          "id": "demand_growth",
+          "name": "Demand Growth Score",
+          "version": "1.0.0",
+          "inputUnit": "year-over-year percentage (5 means 5%, not 0.05)",
+          "normalization": "score = min(100, max(0, 100 * (growthPercent + 10) / 20))",
+          "lowerBound": -10,
+          "upperBound": 10,
+          "assumptions": [
+            "-10% and +10% are fixed heuristic anchors chosen for this prototype, not FAA benchmarks or validated investment thresholds.",
+            "Zero growth maps to 50; this is the scale midpoint, not evidence of opportunity or profitability.",
+            "Values below -10% map to 0 and above +10% map to 100; saturation loses distinctions at the extremes.",
+            "The score depends only on growth, not the size of the airport or the comparison cohort.",
+            "Missing growth is unranked; it is never replaced by zero or an estimated value.",
+            "Passenger growth alone proves neither terminal expansion need nor financial profitability."
+          ],
+          "growthFormula": "(currentEnplanements - previousEnplanements) / previousEnplanements * 100",
+          "rankingRule": "Descending unrounded score; tied scores ordered by ascending IATA code. Rank is an ordinal position.",
+          "evidenceType": "assumption"
+        },
+        "rankings": [
+          {
+            "rank": 1,
+            "iata": "SFO",
+            "score": 73.38377719529767,
+            "scoreEvidenceType": "calculated",
+            "observations": [
+              {
+                "year": 2024,
+                "enplanements": 25078968,
+                "evidenceType": "reported"
+              },
+              {
+                "year": 2025,
+                "enplanements": 26251850,
+                "evidenceType": "reported"
+              }
+            ],
+            "yearOverYear": {
+              "fromYear": 2024,
+              "toYear": 2025,
+              "change": 1172882,
+              "growthPercent": 4.676755439059534,
+              "evidenceType": "calculated",
+              "unavailableReason": null
+            },
+            "sources": [
+              {
+                "reportingYear": 2024,
+                "publicationDate": "2025-09-15",
+                "title": "Cy2024 Enplanements at All Commercial Service Airports (by Rank)",
+                "url": "https://www.faa.gov/sites/faa.gov/files/2026-09/arp-cy2024-commercial-service-enplanements.pdf"
+              },
+              {
+                "reportingYear": 2025,
+                "publicationDate": "2026-09-24",
+                "title": "Final CY2025 Enplanements at All Airports by State and Airport",
+                "url": "https://www.faa.gov/airports/planning_capacity/passenger_allcargo_stats/passenger/arp-cy2025-commercial-service-enplanements.pdf"
+              }
+            ]
+          },
+          {
+            "rank": 2,
+            "iata": "BOS",
+            "score": 48.350743912453254,
+            "scoreEvidenceType": "calculated",
+            "observations": [
+              {
+                "year": 2024,
+                "enplanements": 21090721,
+                "evidenceType": "reported"
+              },
+              {
+                "year": 2025,
+                "enplanements": 21021153,
+                "evidenceType": "reported"
+              }
+            ],
+            "yearOverYear": {
+              "fromYear": 2024,
+              "toYear": 2025,
+              "change": -69568,
+              "growthPercent": -0.32985121750934926,
+              "evidenceType": "calculated",
+              "unavailableReason": null
+            },
+            "sources": [
+              {
+                "reportingYear": 2024,
+                "publicationDate": "2025-09-15",
+                "title": "Cy2024 Enplanements at All Commercial Service Airports (by Rank)",
+                "url": "https://www.faa.gov/sites/faa.gov/files/2026-09/arp-cy2024-commercial-service-enplanements.pdf"
+              },
+              {
+                "reportingYear": 2025,
+                "publicationDate": "2026-09-24",
+                "title": "Final CY2025 Enplanements at All Airports by State and Airport",
+                "url": "https://www.faa.gov/airports/planning_capacity/passenger_allcargo_stats/passenger/arp-cy2025-commercial-service-enplanements.pdf"
+              }
+            ]
+          },
+          {
+            "rank": 3,
+            "iata": "LAX",
+            "score": 33.26929166871685,
+            "scoreEvidenceType": "calculated",
+            "observations": [
+              {
+                "year": 2024,
+                "enplanements": 37760834,
+                "evidenceType": "reported"
+              },
+              {
+                "year": 2025,
+                "enplanements": 36497303,
+                "evidenceType": "reported"
+              }
+            ],
+            "yearOverYear": {
+              "fromYear": 2024,
+              "toYear": 2025,
+              "change": -1263531,
+              "growthPercent": -3.34614166625663,
+              "evidenceType": "calculated",
+              "unavailableReason": null
+            },
+            "sources": [
+              {
+                "reportingYear": 2024,
+                "publicationDate": "2025-09-15",
+                "title": "Cy2024 Enplanements at All Commercial Service Airports (by Rank)",
+                "url": "https://www.faa.gov/sites/faa.gov/files/2026-09/arp-cy2024-commercial-service-enplanements.pdf"
+              },
+              {
+                "reportingYear": 2025,
+                "publicationDate": "2026-09-24",
+                "title": "Final CY2025 Enplanements at All Airports by State and Airport",
+                "url": "https://www.faa.gov/airports/planning_capacity/passenger_allcargo_stats/passenger/arp-cy2025-commercial-service-enplanements.pdf"
+              }
+            ]
+          }
+        ],
+        "unranked": [],
+        "coverage": {
+          "datasetAirportCount": 3,
+          "rankedAirportCount": 3,
+          "unrankedAirportCount": 0,
+          "verifiedKpis": [
+            "passenger_enplanement_growth"
+          ],
+          "unavailableKpis": [
+            "terminal_capacity",
+            "congestion",
+            "financial_returns"
+          ],
+          "limitations": [
+            "Original PDF/XLSX files were not downloaded locally: FAA host DNS resolution failed. Counts come from documented browser-parsed PDF excerpts.",
+            "Coverage is limited to LAX, SFO and BOS; responses are not live FAA queries.",
+            "Enplanements are calendar-year passenger boardings, not total airport passengers or unique travelers.",
+            "The 2025 commercial-service PDF link contains an all-airports-by-state report.",
+            "Annual traffic does not measure terminal capacity or explain changes in demand.",
+            "Rankings cover only the validated local dataset, not the United States airport market.",
+            "Passenger growth alone is not proof of terminal expansion need or financial profitability."
+          ]
+        },
+        "dataSnapshot": {
+          "mode": "documented-local-snapshot",
+          "capturedOn": "2026-10-10",
+          "sourceReferencesVerifiedOn": "2026-10-10",
+          "limitations": [
+            "Original PDF/XLSX files were not downloaded locally: FAA host DNS resolution failed. Counts come from documented browser-parsed PDF excerpts.",
+            "Coverage is limited to LAX, SFO and BOS; responses are not live FAA queries.",
+            "Enplanements are calendar-year passenger boardings, not total airport passengers or unique travelers.",
+            "The 2025 commercial-service PDF link contains an all-airports-by-state report.",
+            "Annual traffic does not measure terminal capacity or explain changes in demand."
+          ]
+        }
+      }
+    }
+  ],
+  "coverage": {
+    "airports": [
+      "LAX",
+      "SFO",
+      "BOS"
+    ],
+    "limitations": [
+      "Original PDF/XLSX files were not downloaded locally: FAA host DNS resolution failed. Counts come from documented browser-parsed PDF excerpts.",
+      "Coverage is limited to LAX, SFO and BOS; responses are not live FAA queries.",
+      "Enplanements are calendar-year passenger boardings, not total airport passengers or unique travelers.",
+      "The 2025 commercial-service PDF link contains an all-airports-by-state report.",
+      "Annual traffic does not measure terminal capacity or explain changes in demand."
+    ]
+  },
+  "answerMode": "verified-template",
+  "model": "gpt-4.1-mini"
+}

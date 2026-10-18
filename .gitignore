@@ -1,0 +1,12 @@
+node_modules/
+.env
+.env.*
+!.env.example
+coverage/
+frontend/dist/
+validation/raw/
+validation/downloaded-snapshot.json
+validation/downloaded-snapshot.*.tmp
+
+# Local editor settings are not part of the submission.
+.idea/
